@@ -67,9 +67,8 @@ message(STATUS "Build date       : ${STDEXEC_BUILD_DATE}")
 message(STATUS "Build year       : ${STDEXEC_BUILD_YEAR}")
 message(STATUS)
 
-set(INTEGRATE_CLANG_TOOLING ${STDEXEC_INTEGRATE_CLANG_TOOLING})
 
-if (INTEGRATE_CLANG_TOOLING)
+if (STDEXEC_IS_TOP_LEVEL)
   # Integrate with LLVM/clang tooling
   include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/clangd_compile_info.cmake)
 endif()
